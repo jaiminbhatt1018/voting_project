@@ -1,0 +1,45 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family:  'Rajdhani', sans-serif;
+}
+.uploading-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.imgs{
+text-align: center;
+}
+.imgs img{
+    height:500px;
+    width: 400px;
+    
+}
+.container{
+    height: 40px;
+    width: 800px;
+    background-color: whitesmoke;
+    position: relative;
+    margin-left: 24%;
+    border-radius: 11px;
+}
+
+.container .progress-bar{
+    position: absolute;
+    height: 100%;
+    background-color: rgb(17, 167, 17);
+    animation: progress-animation 10s forwards;
+    border-radius: 11px;
+}
+
+@keyframes progress-animation {
+     0%{width: 0%;}
+     100%{width: 100%;}
+     
+    
+    
+}

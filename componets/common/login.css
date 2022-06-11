@@ -1,0 +1,82 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family:  'Rajdhani', sans-serif;
+    font-size: 10px;
+}
+.container{
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+margin-top: 5%;
+
+}
+.login_pass_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    font-size: 15px;
+    animation: ease-in 15s;
+    letter-spacing: 2px;
+    
+}
+form{
+    box-shadow: 0px 10px 25px rgb(165, 162, 162);
+    border-radius: 20px;
+    padding: 50px;
+    text-align: center;
+}
+
+.login_pass_detail input{
+    margin-top: 5%;
+    height: 40px;
+    width: 80%;
+    text-align: left;
+    font-size: 25px;
+    font-weight: bold;
+    border-style:solid;
+    border-width:0px 0px 3px 0px;
+    border-color: rgb(165, 162, 162);
+    outline: none;
+    position: relative;
+}
+
+.form_input:focus{
+    border-bottom:3px solid ;
+    transition: ease-out 0.5s;
+}
+.login_pass_detail button{
+    margin-top: 10%;
+    height: 40px;
+    width: 80%;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    border-radius: 10px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+.login_pass_detail button:hover{
+background-color: orange;
+color: black;
+border: none;
+}
+.login_pass_detail p,a{
+    margin-top: 2%;
+    font-size: 20px;
+    font-weight:bolder;
+    
+    letter-spacing: 2px;
+}
+.login_pass_detail i{
+    height: 20px;
+    width: 20px;
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.container img{
+    margin-top: 5%;
+    height:40%;
+    width:40%;
+}

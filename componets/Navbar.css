@@ -1,0 +1,55 @@
+*{
+    font-family:  'inter', sans-serif;
+    font-size: 10px;
+  }
+.nav-bar
+{   
+    object-fit: cover;
+  
+    display: flex;
+    flex-direction: row;
+    width:84vw;
+    height: 9vh;
+}
+    
+.nav-bar ul{
+ 
+  width: 80vw;
+  background-attachment : initial;
+    display: flex;
+    justify-content:left;
+    flex-direction: row;
+  overflow: hidden;
+  height: 11vh;
+
+}
+.nav-bar li {
+    opacity: 20.5;
+    background-image: none;
+    font-size: 1.8rem;
+    color: black;
+    font-weight: bolder;
+    list-style-type: none;
+    margin-left: 4vh;
+    text-align: center;
+    padding-top: 10px;
+    height: 9vh;
+    position: relative;
+}
+li::after{
+  content: "";
+  position: absolute;
+  background: darkorange;
+  height: 3px;
+  width: 0px;
+  border-radius: 10px;
+  left: 0;
+  bottom:0;
+  transition: 0.5s;
+  margin-bottom: 3vh;
+}
+li:hover::after{
+  width: 100%;
+
+
+}

@@ -1,0 +1,64 @@
+* {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+}
+
+.table_div {
+  background-color: #212529;
+  width: 20vw;
+  height: 100vh;
+
+}
+
+
+.table_div th,
+.table_div td {
+  font-size: 16px;
+  font-weight: lighter;
+  color: white;
+  border: none;
+}
+
+.candidate_list td,
+th {
+  font-size: 22px;
+  text-align: center;
+}
+
+
+.Total {
+  height: 16vh;
+
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: larger;
+}
+
+body{
+  max-height: 100vh;
+  overflow: hidden;
+}
+a:hover {
+  color: white;
+}
+.Total{
+height: 10rem;  
+}
+.Total div {
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  padding-left: 1rem;
+  width: 25%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.aproved_list{
+  height: 52rem;
+  overflow-y:scroll;
+}
