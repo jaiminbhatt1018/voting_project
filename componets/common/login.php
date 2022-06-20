@@ -28,7 +28,7 @@ include '../connection.php';
                     <input class="form_input" type="text" id="Email" name="email" placeholder="Email" /><br>
 
 
-                    <input class="form_input" type="text" id="pass" name="pass" placeholder="Password" /><br>
+                    <input class="form_input" type="password" id="pass" name="pass" placeholder="Password" /><br>
                     <button type="submit" name="submit"> Login </button><br><br>
                     <p>Didn't Registered Yet?</p><a href="student_registration.php" style="color: green ;font-size:26px;">Register Now</a>
             </form>

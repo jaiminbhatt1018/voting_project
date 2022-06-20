@@ -1,7 +1,12 @@
 <?php
 session_start();
 include '../connection.php';
-$_SESSION['name'] = "jaimin";
+$sql = "select * from electioninfotb where electionid=1";
+$query = mysqli_query($con, $sql);
+$result = mysqli_fetch_array($query);
+if (date("d-m-y") > $result["registrationEndDate"]) {
+    header("location:../common/login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,13 +50,13 @@ $_SESSION['name'] = "jaimin";
 
 
                     <label for="rollno">SPID : </label>
-                    <input type="number" name="spid" id="spid" placeholder=" Ex:2019008852 " /><br>
+                    <input type="number" name="spid" id="spid" placeholder=" Ex:2019008852 " required /><br>
 
                     <label for="student_name">NAME : </label>
-                    <input type="text" name="student_name" placeholder=" Ex: Bhatt Jaimin Urvishkumar" /><br>
+                    <input type="text" name="student_name" id="student_name" placeholder=" Ex: Bhatt Jaimin Urvishkumar" required /><br>
 
 
-                    <select name="course" id="course" class="course">
+                    <select name="course" id="course" class="course" required>
                         <option value="#">--Select Course--</option>
                         <?php
                         $sql = "select * from coursetb ";
@@ -66,24 +71,29 @@ $_SESSION['name'] = "jaimin";
                     </select>
 
                     <div id="sem-select">
-                        <select id="sem" name="sem">
+                        <select id="sem" name="sem" required>
                             <option>--Select Semester--</option>
                         </select>
                     </div>
 
                     <label for="agenda">AGENDA : </label>
-                    <textarea type="text" name="agenda" placeholder=" Ex: text starts here... "></textarea>
+                    <textarea type="text" name="agenda" placeholder=" Ex: text starts here... " required></textarea>
                     <br>
 
                     <label for="email">EMAIL : </label>
-                    <input type="email" name="email" placeholder=" Ex: xyz123@gmail.com " />
+                    <input type="email" name="email" id="email" placeholder=" Ex: xyz123@gmail.com " required />
                     <br>
 
 
 
                     <label for="password">PASSWORD : </label>
-                    <input type="password" name="password" placeholder="Ex : jaimin123@ " />
-                    <br>
+                    <input type="password" id="password" name="password" placeholder="Ex : jaimin123@ " required />
+                    <ul class="guidlines d-flex flex-row justify-content-around">
+                        <li id="UpperCase">1 Upper Case</li>
+                        <li id="Digit">1 Digit </li>
+                        <li id="SpChar">1 Special Caracters</li>
+                    </ul>
+
 
 
 
@@ -101,6 +111,7 @@ $_SESSION['name'] = "jaimin";
 
 
     </div>
+    <script src="../VoterModule/validation.js"></script>
     <script>
         $('#course').on("change", function() {
 

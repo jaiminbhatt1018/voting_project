@@ -87,22 +87,11 @@ $total_pending = $total_candidate - $total_approved;
           <h2>Not Approved or Pending : <?php echo $total_pending ?></h2>
         </div>
       </div>
-
-
-
       <div class="container aproved_list ">
-
         <div class="mx-2 my-2" id="mydiv" data-aos="zoom-in-up" data-aos-duration="500">
 
         </div>
-
       </div>
-
-
-
-
-
-
     </div>
     <form method="post" id="photoForm">
       <input type="text" id="c_id" name="c_id" value="<?php ?>" hidden>

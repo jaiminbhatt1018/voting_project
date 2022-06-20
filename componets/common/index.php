@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,5 +58,6 @@
         <p>Developed by : BHATT JAIMIN</p>
     </div>
 </body>
+
 
 </html>

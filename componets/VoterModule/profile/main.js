@@ -73,7 +73,7 @@ $(document).ready(function() {
                         title: 'Voted Successfully',
                         text: 'Photo uploaded successfully',
                         icon: 'success',
-                        buttons: false,
+                        buttons: true,
                         closeOnClickOutside: false,
                         closeOnEsc: false,
                         timer: 3000

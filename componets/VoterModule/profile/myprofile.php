@@ -2,6 +2,12 @@
 session_start();
 include '../../connection.php';
 
+$sql = "select * from electioninfotb where electionid=1";
+$query = mysqli_query($con, $sql);
+$result = mysqli_fetch_array($query);
+if (date("d-m-y") < $result["VotingStartDate"]) {
+  header("location:../error.html");
+}
 $email = $_SESSION['email'];
 $pass = $_SESSION['password'];
 $query = "select * from votertb where email='$email' and password='$pass'";

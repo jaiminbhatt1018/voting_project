@@ -59,6 +59,18 @@ height: 10rem;
 }
 
 .aproved_list{
-  height: 52rem;
+  height: 60rem;
   overflow-y:scroll;
+}
+.form input{
+width: 200px;
+height:50px;
+border: none;
+border-bottom: 1px solid #ca3b00;
+border-radius: 2px;
+outline: none;
+font-size: large;
+}
+.form label{
+  font-size: large;
 }

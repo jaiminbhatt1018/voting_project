@@ -1,3 +1,7 @@
+body{
+    position: relative;
+
+}
 .main {
     width: 100vw;
     height: 100vh;
@@ -8,15 +12,15 @@
 .registration_detail {
     vertical-align: middle;
     width: 80%;
-    height: 85%;
+    height: 95%;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     border-radius: 10px;
 }
 
 .details {
     width: 50%;
-    height: 100%;
+    height: 95%;
     margin-left: 20rem;
     background-color: white;
     align-items: center;
@@ -79,4 +83,20 @@ select {
     height: 85%;
     margin-left: 8rem;
 
+}
+.guidlines{
+    font-size: 0.7rem;
+    height: 10px;
+}
+.pass-alert{
+    width: 80%;
+    position: absolute;
+    z-index: 9999 !important;
+}
+form{
+    font-size: 0.94rem;
+}
+#UpperCase,#Digit,#SpChar{
+    color: #ca3b00;
+    font-weight: bold;
 }

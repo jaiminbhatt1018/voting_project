@@ -1,7 +1,13 @@
 <?php
 session_start();
 include '../connection.php';
-$_SESSION['name'] = "jaimin";
+$sql = "select * from electioninfotb where electionid=1";
+$query = mysqli_query($con, $sql);
+$result = mysqli_fetch_array($query);
+if (date("d-m-y") > $result["registrationEndDate"]) {
+    header("location:../common/login.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,12 +25,16 @@ $_SESSION['name'] = "jaimin";
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/register.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="body">
+    <div class="pass-alert d-flex flex-row justify-content-center mx-2">
 
-    <div class="main d-flex flex-row justify-content-center">
+    </div>
+
+    <div class="main d-flex flex-row justify-content-center align-items-center">
 
         <div class="img">
             <div class="headings">
@@ -45,14 +55,14 @@ $_SESSION['name'] = "jaimin";
 
 
                     <label for="rollno">SPID : </label>
-                    <input type="number" name="spid" id="spid" placeholder=" Ex:2019008852 " /><br>
+                    <input type="number" name="spid" id="spid" placeholder=" Ex:2019008852 " required /><br>
 
                     <label for="student_name">NAME : </label>
-                    <input type="text" name="student_name" placeholder=" Ex: Bhatt Jaimin Urvishkumar" /><br>
+                    <input type="text" name="student_name" id="student_name" placeholder=" Ex: Bhatt Jaimin Urvishkumar" required /><br>
 
 
-                    <select name="course" id="course" class="course">
-                        <option value="#">--Select Course--</option>
+                    <select name="course" id="course" class="course" required>
+                        <option value=0 id="course_val">--Select Course--</option>
                         <?php
                         $sql = "select * from coursetb ";
                         $query = mysqli_query($con, $sql);
@@ -66,26 +76,33 @@ $_SESSION['name'] = "jaimin";
                     </select>
 
                     <div id="sem-select">
-                        <select id="sem" name="sem">
-                            <option>--Select Semester--</option>
+                        <select id="sem" name="sem" required>
+                            <option value=0>--Select Semester--</option>
                         </select>
                     </div>
 
 
                     <label for="email">EMAIL : </label>
-                    <input type="email" name="email" placeholder=" Ex: xyz123@gmail.com " />
+                    <input type="email" name="email" id="email" placeholder=" Ex: jaiminbhatt.mscit19@vnsgu.ac.in" required />
                     <br>
 
 
 
                     <label for="password">PASSWORD : </label>
-                    <input type="password" name="password" placeholder="Ex : jaimin123@ " />
+                    <input type="password" name="password" id="password" class="mb-0 pb-0" placeholder="Ex : jaimin123@ " required />
+                    <p class="guidlines">
+                    <ul class="guidlines">
+                        <li id="UpperCase">1 Upper Case</li>
+                        <li id="Digit">1 Digit </li>
+                        <li id="SpChar">1 Special Caracters</li>
+                    </ul>
+                    </p>
                     <br>
 
 
 
                     <label for="file">UPLOAD IMAGE : </label>
-                    <input id="photo" name="file" style="border:none" type="file" placeholder="uplode photo" />
+                    <input id="photo" name="file" style="border:none" type="file" placeholder="uplode photo" required />
                     <br>
 
 
@@ -98,6 +115,7 @@ $_SESSION['name'] = "jaimin";
 
 
     </div>
+    <script src="./validation.js"></script>
     <script>
         $('#course').on("change", function() {
 
